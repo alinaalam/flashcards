@@ -1,4 +1,4 @@
-package flashcards;
+package flashcards.domain;
 
 public class Card {
 

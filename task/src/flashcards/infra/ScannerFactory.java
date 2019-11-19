@@ -1,4 +1,4 @@
-package flashcards;
+package flashcards.infra;
 
 import java.util.Scanner;
 
@@ -6,9 +6,7 @@ public class ScannerFactory {
 
     private static Scanner scanner;
 
-    private ScannerFactory() {
-
-    }
+    private ScannerFactory() { }
 
     public static Scanner getScanner() {
         if (scanner == null) {

@@ -1,5 +1,7 @@
 package flashcards;
 
+import flashcards.infra.ScannerFactory;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -39,8 +41,28 @@ public class CardHolder {
         System.out.println("The pair (\"" + term + "\":\"" + definition + "\") has been added.");
     }
 
-    public void removeCard() {
+    public int importCards(String fileContent) {
+        String[] cardArray = fileContent.split("\n");
+        for (String cardDefinition : cardArray) {
+            String[] content = cardDefinition.split(":");
+            cards.put(content[0], content[1]);
+            invertedCards.put(content[1], content[0]);
+        }
+        return cardArray.length;
+    }
 
+    public void removeCard() {
+        System.out.println("The card:");
+        String term = scanner.nextLine();
+        if (cards.containsKey(term)) {
+            String definition = cards.get(term);
+            cards.remove(term);
+            invertedCards.remove(definition);
+            System.out.println("The card has been removed.");
+        }
+        else {
+            System.out.println("Can't remove \"" + term + "\": there is no such card.");
+        }
     }
 
     public Map<String, String> getCards() {

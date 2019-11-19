@@ -1,5 +1,12 @@
 package flashcards;
 
+import flashcards.infra.ScannerFactory;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 
 public class CardGame {
@@ -30,8 +37,10 @@ public class CardGame {
                     cardHolder.removeCard();
                     break;
                 case IMPORT:
+                    importCards();
                     break;
                 case EXPORT:
+                    export();
                     break;
                 case ASK:
                     play();
@@ -41,6 +50,35 @@ public class CardGame {
         System.out.println("Bye bye!");
     }
 
+    private void importCards() {
+        System.out.println("File name:");
+        String filename = scanner.nextLine();
+        try {
+            Path path = Path.of(filename);
+            String fileContent = Files.readString(path);
+            int totalCards = cardHolder.importCards(fileContent);
+            System.out.println(totalCards + " cards have been loaded");
+        } catch (IOException e) {
+            System.out.println("File not found.");
+        }
+    }
+
+    private void export() {
+        System.out.println("File name:");
+        String filename = scanner.nextLine();
+        File file = new File(filename);
+        try {
+            FileWriter fileWriter = new FileWriter(file);
+            for (Map.Entry<String, String> entry : cardHolder.getCards().entrySet()) {
+                fileWriter.write(entry.getKey() + ":" + entry.getValue());
+                fileWriter.write("\n");
+            }
+            System.out.println(cardHolder.getCards().size() + " cards have been saved.");
+            fileWriter.close();
+        } catch (IOException e) {
+
+        }
+    }
 
     private void play() {
         Map<String, String> cards = cardHolder.getCards();
