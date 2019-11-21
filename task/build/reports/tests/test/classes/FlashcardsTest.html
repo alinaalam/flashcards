@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">32.145s</div>
+<div class="counter">0.567s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,182 +61,13 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
-</li>
-<li>
-<a href="#tab2">Standard output</a>
+<a href="#tab1">Standard output</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="start"></a>
-<h3 class="failures">start</h3>
-<span class="code">
-<pre>java.lang.AssertionError: Wrong answer in test #7
-
-Your line
-`Wrong answer. The correct one is &quot;Paris&quot;, you've just written the definition of &quot;Great Britain&quot;.`
-should NOT contain `you've just written the definition of`.
-The asked card was `France`, the answer was `London`.
-
-Your output with test input (`&gt;` indicates test input):
-Input the action (add, remove, import, export, ask, exit):
-&gt; import
-File name:
-&gt; capitalsNew.txt
-1 cards have been loaded
-Input the action (add, remove, import, export, ask, exit):
-&gt; add
-The card:
-&gt; France
-The definition of the card:
-&gt; Paris
-The pair (&quot;France&quot;:&quot;Paris&quot;) has been added.
-Input the action (add, remove, import, export, ask, exit):
-&gt; add
-The card:
-&gt; Russia
-The definition of the card:
-&gt; Moscow
-The pair (&quot;Russia&quot;:&quot;Moscow&quot;) has been added.
-Input the action (add, remove, import, export, ask, exit):
-&gt; remove
-The card:
-&gt; Great Britain
-The card has been removed.
-Input the action (add, remove, import, export, ask, exit):
-&gt; export
-File name:
-&gt; capitalsNew.txt
-2 cards have been saved.
-Input the action (add, remove, import, export, ask, exit):
-&gt; import
-File name:
-&gt; capitalsNew.txt
-2 cards have been loaded
-Input the action (add, remove, import, export, ask, exit):
-&gt; ask
-How many times?
-&gt; 4
-Print the definition of &quot;France&quot;:
-&gt; London
-Wrong answer. The correct one is &quot;Paris&quot;, you've just written the definition of &quot;Great Britain&quot;.
-
-Below you can see the output of your program during this test
-Notice, that '&gt;' symbol means the start of the input:
-
-Input the action (add, remove, import, export, ask, exit):
-&gt;import
-File name:
-&gt;capitalsNew.txt
-1 cards have been loaded
-Input the action (add, remove, import, export, ask, exit):
-&gt;add
-The card:
-&gt;France
-The definition of the card:
-&gt;Paris
-The pair (&quot;France&quot;:&quot;Paris&quot;) has been added.
-Input the action (add, remove, import, export, ask, exit):
-&gt;add
-The card:
-&gt;Russia
-The definition of the card:
-&gt;Moscow
-The pair (&quot;Russia&quot;:&quot;Moscow&quot;) has been added.
-Input the action (add, remove, import, export, ask, exit):
-&gt;remove
-The card:
-&gt;Great Britain
-The card has been removed.
-Input the action (add, remove, import, export, ask, exit):
-&gt;export
-File name:
-&gt;capitalsNew.txt
-2 cards have been saved.
-Input the action (add, remove, import, export, ask, exit):
-&gt;import
-File name:
-&gt;capitalsNew.txt
-2 cards have been loaded
-Input the action (add, remove, import, export, ask, exit):
-&gt;ask
-How many times?
-&gt;4
-Print the definition of &quot;France&quot;:
-&gt;London
-Wrong answer. The correct one is &quot;Paris&quot;, you've just written the definition of &quot;Great Britain&quot;.
-Print the definition of &quot;Russia&quot;:
-&gt;Paris
-Wrong answer. The correct one is &quot;Moscow&quot;, you've just written the definition of &quot;France&quot;.
-Print the definition of &quot;France&quot;:
-&gt;Moscow
-Wrong answer. The correct one is &quot;Paris&quot;, you've just written the definition of &quot;Russia&quot;.
-Print the definition of &quot;Russia&quot;:
-&gt;Paris
-Wrong answer. The correct one is &quot;Moscow&quot;, you've just written the definition of &quot;France&quot;.
-Input the action (add, remove, import, export, ask, exit):
-&gt;exit
-Bye bye!
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.hyperskill.hstest.v6.stage.BaseStageTest.start(BaseStageTest.java:172)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
-	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -247,13 +78,13 @@ Bye bye!
 </tr>
 </thead>
 <tr>
-<td class="failures">start</td>
-<td class="failures">32.145s</td>
-<td class="failures">failed</td>
+<td class="success">start</td>
+<td class="success">0.567s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
 <pre>?[1;31m
@@ -310,21 +141,21 @@ Input the action (add, remove, import, export, ask, exit):
 &gt;ask
 How many times?
 &gt;6
-Print the definition of &quot;a part of the body where the foot and the leg meet&quot;:
+Print the definition of &quot;a brother of one's parent&quot;:
 &gt;ankle
-Correct answer.
-Print the definition of &quot;a part of the body where the foot and the leg meet&quot;:
+Wrong answer. The correct one is &quot;uncle&quot;, you've just written the definition of &quot;a part of the body where the foot and the leg meet&quot;.
+Print the definition of &quot;a brother of one's parent&quot;:
 &gt;??
-Wrong answer. The correct one is &quot;ankle&quot;.
+Wrong answer. The correct one is &quot;uncle&quot;.
 Print the definition of &quot;a part of the body where the foot and the leg meet&quot;:
 &gt;uncle
 Wrong answer. The correct one is &quot;ankle&quot;, you've just written the definition of &quot;a brother of one's parent&quot;.
 Print the definition of &quot;a part of the body where the foot and the leg meet&quot;:
 &gt;ankle
 Correct answer.
-Print the definition of &quot;a part of the body where the foot and the leg meet&quot;:
+Print the definition of &quot;a brother of one's parent&quot;:
 &gt;??
-Wrong answer. The correct one is &quot;ankle&quot;.
+Wrong answer. The correct one is &quot;uncle&quot;.
 Print the definition of &quot;a brother of one's parent&quot;:
 &gt;uncle
 Correct answer.
@@ -447,16 +278,215 @@ How many times?
 &gt;4
 Print the definition of &quot;France&quot;:
 &gt;London
-Wrong answer. The correct one is &quot;Paris&quot;, you've just written the definition of &quot;Great Britain&quot;.
-Print the definition of &quot;Russia&quot;:
-&gt;Paris
-Wrong answer. The correct one is &quot;Moscow&quot;, you've just written the definition of &quot;France&quot;.
+Wrong answer. The correct one is &quot;Paris&quot;.
 Print the definition of &quot;France&quot;:
+&gt;Paris
+Correct answer.
+Print the definition of &quot;Russia&quot;:
 &gt;Moscow
-Wrong answer. The correct one is &quot;Paris&quot;, you've just written the definition of &quot;Russia&quot;.
+Correct answer.
 Print the definition of &quot;Russia&quot;:
 &gt;Paris
 Wrong answer. The correct one is &quot;Moscow&quot;, you've just written the definition of &quot;France&quot;.
+Input the action (add, remove, import, export, ask, exit):
+&gt;exit
+Bye bye!
+?[1;31m
+Start test 8?[0m
+Input the action (add, remove, import, export, ask, exit):
+&gt;add
+The card:
+&gt;Japan
+The definition of the card:
+&gt;Tokyo
+The pair (&quot;Japan&quot;:&quot;Tokyo&quot;) has been added.
+Input the action (add, remove, import, export, ask, exit):
+&gt;add
+The card:
+&gt;France
+The definition of the card:
+&gt;UpdateMeFromImport
+The pair (&quot;France&quot;:&quot;UpdateMeFromImport&quot;) has been added.
+Input the action (add, remove, import, export, ask, exit):
+&gt;add
+The card:
+&gt;Russia
+The definition of the card:
+&gt;UpdateMeFromImport2
+The pair (&quot;Russia&quot;:&quot;UpdateMeFromImport2&quot;) has been added.
+Input the action (add, remove, import, export, ask, exit):
+&gt;import
+File name:
+&gt;capitalsNew.txt
+2 cards have been loaded
+Input the action (add, remove, import, export, ask, exit):
+&gt;ask
+How many times?
+&gt;3
+Print the definition of &quot;Japan&quot;:
+&gt;Tokyo
+Correct answer.
+Print the definition of &quot;Russia&quot;:
+&gt;Paris
+Wrong answer. The correct one is &quot;Moscow&quot;, you've just written the definition of &quot;France&quot;.
+Print the definition of &quot;Japan&quot;:
+&gt;Moscow
+Wrong answer. The correct one is &quot;Tokyo&quot;, you've just written the definition of &quot;Russia&quot;.
+Input the action (add, remove, import, export, ask, exit):
+&gt;remove
+The card:
+&gt;Japan
+The card has been removed.
+Input the action (add, remove, import, export, ask, exit):
+&gt;remove
+The card:
+&gt;Russia
+The card has been removed.
+Input the action (add, remove, import, export, ask, exit):
+&gt;export
+File name:
+&gt;capitalsNew.txt
+1 cards have been saved.
+Input the action (add, remove, import, export, ask, exit):
+&gt;exit
+Bye bye!
+?[1;31m
+Start test 9?[0m
+Input the action (add, remove, import, export, ask, exit):
+&gt;add
+The card:
+&gt;France
+The definition of the card:
+&gt;UpdateMeFromImport
+The pair (&quot;France&quot;:&quot;UpdateMeFromImport&quot;) has been added.
+Input the action (add, remove, import, export, ask, exit):
+&gt;import
+File name:
+&gt;capitalsNew.txt
+1 cards have been loaded
+Input the action (add, remove, import, export, ask, exit):
+&gt;ask
+How many times?
+&gt;1
+Print the definition of &quot;France&quot;:
+&gt;UpdateMeFromImport
+Wrong answer. The correct one is &quot;Paris&quot;.
+Input the action (add, remove, import, export, ask, exit):
+&gt;exit
+Bye bye!
+?[1;31m
+Start test 10?[0m
+Input the action (add, remove, import, export, ask, exit):
+&gt;add
+The card:
+&gt;a
+The definition of the card:
+&gt;1
+The pair (&quot;a&quot;:&quot;1&quot;) has been added.
+Input the action (add, remove, import, export, ask, exit):
+&gt;add
+The card:
+&gt;b
+The definition of the card:
+&gt;2
+The pair (&quot;b&quot;:&quot;2&quot;) has been added.
+Input the action (add, remove, import, export, ask, exit):
+&gt;add
+The card:
+&gt;c
+The definition of the card:
+&gt;3
+The pair (&quot;c&quot;:&quot;3&quot;) has been added.
+Input the action (add, remove, import, export, ask, exit):
+&gt;add
+The card:
+&gt;b
+The card &quot;b&quot; already exists.
+Input the action (add, remove, import, export, ask, exit):
+&gt;add
+The card:
+&gt;c
+The card &quot;c&quot; already exists.
+Input the action (add, remove, import, export, ask, exit):
+&gt;add
+The card:
+&gt;d
+The definition of the card:
+&gt;4
+The pair (&quot;d&quot;:&quot;4&quot;) has been added.
+Input the action (add, remove, import, export, ask, exit):
+&gt;remove
+The card:
+&gt;c
+The card has been removed.
+Input the action (add, remove, import, export, ask, exit):
+&gt;remove
+The card:
+&gt;xxxx
+Can't remove &quot;xxxx&quot;: there is no such card.
+Input the action (add, remove, import, export, ask, exit):
+&gt;add
+The card:
+&gt;c
+The definition of the card:
+&gt;5
+The pair (&quot;c&quot;:&quot;5&quot;) has been added.
+Input the action (add, remove, import, export, ask, exit):
+&gt;add
+The card:
+&gt;new card
+The definition of the card:
+&gt;4
+The definition &quot;4&quot; already exists.
+Input the action (add, remove, import, export, ask, exit):
+&gt;add
+The card:
+&gt;f
+The definition of the card:
+&gt;5
+The definition &quot;5&quot; already exists.
+Input the action (add, remove, import, export, ask, exit):
+&gt;remove
+The card:
+&gt;c
+The card has been removed.
+Input the action (add, remove, import, export, ask, exit):
+&gt;remove
+The card:
+&gt;d
+The card has been removed.
+Input the action (add, remove, import, export, ask, exit):
+&gt;ask
+How many times?
+&gt;7
+Print the definition of &quot;a&quot;:
+&gt;1
+Correct answer.
+Print the definition of &quot;b&quot;:
+&gt;2
+Correct answer.
+Print the definition of &quot;b&quot;:
+&gt;3
+Wrong answer. The correct one is &quot;2&quot;.
+Print the definition of &quot;a&quot;:
+&gt;4
+Wrong answer. The correct one is &quot;1&quot;.
+Print the definition of &quot;a&quot;:
+&gt;3
+Wrong answer. The correct one is &quot;1&quot;.
+Print the definition of &quot;a&quot;:
+&gt;2
+Wrong answer. The correct one is &quot;1&quot;, you've just written the definition of &quot;b&quot;.
+Print the definition of &quot;b&quot;:
+&gt;1
+Wrong answer. The correct one is &quot;2&quot;, you've just written the definition of &quot;a&quot;.
+Input the action (add, remove, import, export, ask, exit):
+&gt;ask
+How many times?
+&gt;1
+Print the definition of &quot;b&quot;:
+&gt;2
+Correct answer.
 Input the action (add, remove, import, export, ask, exit):
 &gt;exit
 Bye bye!
@@ -471,7 +501,7 @@ Bye bye!
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 5.3.1</a> at 20 Nov 2019, 13:08:42</p>
+<a href="http://www.gradle.org">Gradle 5.3.1</a> at 21 Nov 2019, 13:06:00</p>
 </div>
 </div>
 </body>

@@ -52,21 +52,21 @@
 >ask
 How many times?
 >6
-MPrint the definition of "a part of the body where the foot and the leg meet":
+4Print the definition of "a brother of one's parent":
 >ankle
-Correct answer.
-MPrint the definition of "a part of the body where the foot and the leg meet":
+*Wrong answer. The correct one is "uncle", [you've just written the definition of "a part of the body where the foot and the leg meet".
+4Print the definition of "a brother of one's parent":
 >??
-)Wrong answer. The correct one is "ankle".
+)Wrong answer. The correct one is "uncle".
 MPrint the definition of "a part of the body where the foot and the leg meet":
 >uncle
 *Wrong answer. The correct one is "ankle", Byou've just written the definition of "a brother of one's parent".
 MPrint the definition of "a part of the body where the foot and the leg meet":
 >ankle
 Correct answer.
-MPrint the definition of "a part of the body where the foot and the leg meet":
+4Print the definition of "a brother of one's parent":
 >??
-)Wrong answer. The correct one is "ankle".
+)Wrong answer. The correct one is "uncle".
 4Print the definition of "a brother of one's parent":
 >uncle
 Correct answer.
@@ -199,16 +199,219 @@ File name:
 >4
 !Print the definition of "France":
 >London
-*Wrong answer. The correct one is "Paris", 6you've just written the definition of "Great Britain".
-!Print the definition of "Russia":
->Paris
-+Wrong answer. The correct one is "Moscow", /you've just written the definition of "France".
+)Wrong answer. The correct one is "Paris".
 !Print the definition of "France":
+>Paris
+Correct answer.
+!Print the definition of "Russia":
 >Moscow
-*Wrong answer. The correct one is "Paris", /you've just written the definition of "Russia".
+Correct answer.
 !Print the definition of "Russia":
 >Paris
 +Wrong answer. The correct one is "Moscow", /you've just written the definition of "France".
+:Input the action (add, remove, import, export, ask, exit):
+>exit
+Bye bye!
+[1;31m
+Start test 8[0m
+:Input the action (add, remove, import, export, ask, exit):
+>add
+	The card:
+>Japan
+The definition of the card:
+>Tokyo
+*The pair ("Japan":"Tokyo") has been added.
+:Input the action (add, remove, import, export, ask, exit):
+>add
+	The card:
+>France
+The definition of the card:
+>UpdateMeFromImport
+8The pair ("France":"UpdateMeFromImport") has been added.
+:Input the action (add, remove, import, export, ask, exit):
+>add
+	The card:
+>Russia
+The definition of the card:
+>UpdateMeFromImport2
+9The pair ("Russia":"UpdateMeFromImport2") has been added.
+:Input the action (add, remove, import, export, ask, exit):
+>import
+
+File name:
+>capitalsNew.txt
+2 cards have been loaded
+:Input the action (add, remove, import, export, ask, exit):
+>ask
+How many times?
+>3
+ Print the definition of "Japan":
+>Tokyo
+Correct answer.
+!Print the definition of "Russia":
+>Paris
++Wrong answer. The correct one is "Moscow", /you've just written the definition of "France".
+ Print the definition of "Japan":
+>Moscow
+*Wrong answer. The correct one is "Tokyo", /you've just written the definition of "Russia".
+:Input the action (add, remove, import, export, ask, exit):
+>remove
+	The card:
+>Japan
+The card has been removed.
+:Input the action (add, remove, import, export, ask, exit):
+>remove
+	The card:
+>Russia
+The card has been removed.
+:Input the action (add, remove, import, export, ask, exit):
+>export
+
+File name:
+>capitalsNew.txt
+1 cards have been saved.
+:Input the action (add, remove, import, export, ask, exit):
+>exit
+Bye bye!
+[1;31m
+Start test 9[0m
+:Input the action (add, remove, import, export, ask, exit):
+>add
+	The card:
+>France
+The definition of the card:
+>UpdateMeFromImport
+8The pair ("France":"UpdateMeFromImport") has been added.
+:Input the action (add, remove, import, export, ask, exit):
+>import
+
+File name:
+>capitalsNew.txt
+1 cards have been loaded
+:Input the action (add, remove, import, export, ask, exit):
+>ask
+How many times?
+>1
+!Print the definition of "France":
+>UpdateMeFromImport
+)Wrong answer. The correct one is "Paris".
+:Input the action (add, remove, import, export, ask, exit):
+>exit
+Bye bye!
+[1;31m
+Start test 10[0m
+:Input the action (add, remove, import, export, ask, exit):
+>add
+	The card:
+>a
+The definition of the card:
+>1
+"The pair ("a":"1") has been added.
+:Input the action (add, remove, import, export, ask, exit):
+>add
+	The card:
+>b
+The definition of the card:
+>2
+"The pair ("b":"2") has been added.
+:Input the action (add, remove, import, export, ask, exit):
+>add
+	The card:
+>c
+The definition of the card:
+>3
+"The pair ("c":"3") has been added.
+:Input the action (add, remove, import, export, ask, exit):
+>add
+	The card:
+>b
+The card "b" already exists.
+:Input the action (add, remove, import, export, ask, exit):
+>add
+	The card:
+>c
+The card "c" already exists.
+:Input the action (add, remove, import, export, ask, exit):
+>add
+	The card:
+>d
+The definition of the card:
+>4
+"The pair ("d":"4") has been added.
+:Input the action (add, remove, import, export, ask, exit):
+>remove
+	The card:
+>c
+The card has been removed.
+:Input the action (add, remove, import, export, ask, exit):
+>remove
+	The card:
+>xxxx
++Can't remove "xxxx": there is no such card.
+:Input the action (add, remove, import, export, ask, exit):
+>add
+	The card:
+>c
+The definition of the card:
+>5
+"The pair ("c":"5") has been added.
+:Input the action (add, remove, import, export, ask, exit):
+>add
+	The card:
+
+>new card
+The definition of the card:
+>4
+"The definition "4" already exists.
+:Input the action (add, remove, import, export, ask, exit):
+>add
+	The card:
+>f
+The definition of the card:
+>5
+"The definition "5" already exists.
+:Input the action (add, remove, import, export, ask, exit):
+>remove
+	The card:
+>c
+The card has been removed.
+:Input the action (add, remove, import, export, ask, exit):
+>remove
+	The card:
+>d
+The card has been removed.
+:Input the action (add, remove, import, export, ask, exit):
+>ask
+How many times?
+>7
+Print the definition of "a":
+>1
+Correct answer.
+Print the definition of "b":
+>2
+Correct answer.
+Print the definition of "b":
+>3
+%Wrong answer. The correct one is "2".
+Print the definition of "a":
+>4
+%Wrong answer. The correct one is "1".
+Print the definition of "a":
+>3
+%Wrong answer. The correct one is "1".
+Print the definition of "a":
+>2
+&Wrong answer. The correct one is "1", *you've just written the definition of "b".
+Print the definition of "b":
+>1
+&Wrong answer. The correct one is "2", *you've just written the definition of "a".
+:Input the action (add, remove, import, export, ask, exit):
+>ask
+How many times?
+>1
+Print the definition of "b":
+>2
+Correct answer.
 :Input the action (add, remove, import, export, ask, exit):
 >exit
 Bye bye!

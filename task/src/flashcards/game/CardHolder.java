@@ -17,6 +17,10 @@ public class CardHolder {
     }
 
     public void add(Card card) {
+        // update the current value
+        if (cardMap.containsKey(card.getTerm())) {
+            remove(card.getTerm());
+        }
         cardMap.put(card.getTerm(), card);
         invertedCardMap.put(card.getDefinition(), card);
     }
@@ -30,8 +34,9 @@ public class CardHolder {
     }
 
     public void remove(String term) {
+        Card card = cardMap.get(term);
         cardMap.remove(term);
-        invertedCardMap.remove(term);
+        invertedCardMap.remove(card.getDefinition());
     }
 
     public List<Card> getRandomCards(int numberOfCards) {
