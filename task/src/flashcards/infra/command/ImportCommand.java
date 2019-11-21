@@ -7,7 +7,6 @@ import flashcards.infra.ScannerFactory;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Scanner;
 
 public class ImportCommand implements Command {
 
@@ -19,17 +18,15 @@ public class ImportCommand implements Command {
 
     @Override
     public void execute() {
-        System.out.println("File name:");
-        Scanner scanner = ScannerFactory.getScanner();
 
-        String filename = scanner.nextLine();
+        String filename = ScannerFactory.displayOutputAndGetInput("File name:");
         try {
             Path path = Path.of(filename);
             String fileContent = Files.readString(path);
             int totalCards = importCards(fileContent);
-            System.out.println(totalCards + " cards have been loaded");
+           ScannerFactory.displayOutput(totalCards + " cards have been loaded");
         } catch (IOException e) {
-            System.out.println("File not found.");
+            ScannerFactory.displayOutput("File not found.");
         }
     }
 

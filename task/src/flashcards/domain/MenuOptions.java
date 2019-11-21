@@ -6,7 +6,10 @@ public enum MenuOptions {
     IMPORT("import"),
     EXPORT("export"),
     ASK("ask"),
-    EXIT("exit");
+    EXIT("exit"),
+    LOG("log"),
+    HARDEST_CARD("hardest card"),
+    RESET_STATS("reset stats");
 
     private String value;
 

@@ -8,7 +8,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
-import java.util.Scanner;
 
 public class ExportCommand implements Command {
 
@@ -20,10 +19,7 @@ public class ExportCommand implements Command {
 
     @Override
     public void execute() {
-        System.out.println("File name:");
-        Scanner scanner = ScannerFactory.getScanner();
-
-        String filename = scanner.nextLine();
+        String filename = ScannerFactory.displayOutputAndGetInput("\"File name:\"");
         File file = new File(filename);
         try {
             FileWriter fileWriter = new FileWriter(file);
@@ -32,7 +28,7 @@ public class ExportCommand implements Command {
                 fileWriter.write(card.getTerm() + ":" + card.getDefinition());
                 fileWriter.write("\n");
             }
-            System.out.println(cards.size() + " cards have been saved.");
+            ScannerFactory.displayOutput(cards.size() + " cards have been saved.");
             fileWriter.close();
         } catch (IOException e) {
 

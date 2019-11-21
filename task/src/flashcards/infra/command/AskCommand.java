@@ -16,27 +16,26 @@ public class AskCommand implements Command {
 
     @Override
     public void execute() {
-        Scanner scanner = ScannerFactory.getScanner();
 
-        System.out.println("How many times?");
-        int turns = Integer.parseInt(scanner.nextLine());
+        int turns = Integer.parseInt(ScannerFactory.displayOutputAndGetInput("How many times?"));
         List<Card> randomCards = cardHolder.getRandomCards(turns);
 
         for (Card card : randomCards) {
-            System.out.println("Print the definition of \"" + card.getTerm() + "\":");
-            String answer = scanner.nextLine();
+            String answer = ScannerFactory.displayOutputAndGetInput("Print the definition of \"" + card.getTerm() + "\":");
             if (card.getDefinition().equals(answer)) {
-                System.out.println("Correct answer.");
+                ScannerFactory.displayOutput("Correct answer.");
                 continue;
             }
             // check if the answer belongs to some other flash card
             Card otherCard = cardHolder.getCardFromDefinition(answer);
             if (otherCard == null) {
-                System.out.println("Wrong answer. The correct one is \"" + card.getDefinition() + "\".");
+                ScannerFactory.displayOutput("Wrong answer. The correct one is \"" + card.getDefinition() + "\".");
                 continue;
             }
-            System.out.print("Wrong answer. The correct one is \"" + card.getDefinition() + "\", ");
-            System.out.println("you've just written the definition of \"" + otherCard.getTerm() + "\".");
+            StringBuilder sb = new StringBuilder("Wrong answer. The correct one is \"" + card.getDefinition() + "\", ");
+            sb.append("you've just written the definition of \"" + otherCard.getTerm() + "\".");
+
+            ScannerFactory.displayOutput(sb.toString());
         }
     }
 }

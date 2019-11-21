@@ -1,8 +1,10 @@
 package flashcards.infra.command;
 
+import flashcards.infra.ScannerFactory;
+
 public class ExitCommand implements Command {
     @Override
     public void execute() {
-        System.out.println("Bye bye!");
+        ScannerFactory.displayOutput("\"Bye bye!\"");
     }
 }
