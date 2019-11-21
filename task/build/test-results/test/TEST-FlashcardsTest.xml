@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FlashcardsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-21T12:05:59" hostname="DE-MAC-104.local" time="0.567">
+<testsuite name="FlashcardsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-21T12:07:10" hostname="DE-MAC-104.local" time="0.479">
   <properties/>
-  <testcase name="start" classname="FlashcardsTest" time="0.567"/>
+  <testcase name="start" classname="FlashcardsTest" time="0.479"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
 Input the action (add, remove, import, export, ask, exit):
@@ -56,9 +56,9 @@ Input the action (add, remove, import, export, ask, exit):
 >ask
 How many times?
 >6
-Print the definition of "a brother of one's parent":
+Print the definition of "a part of the body where the foot and the leg meet":
 >ankle
-Wrong answer. The correct one is "uncle", you've just written the definition of "a part of the body where the foot and the leg meet".
+Correct answer.
 Print the definition of "a brother of one's parent":
 >??
 Wrong answer. The correct one is "uncle".
@@ -68,12 +68,12 @@ Wrong answer. The correct one is "ankle", you've just written the definition of 
 Print the definition of "a part of the body where the foot and the leg meet":
 >ankle
 Correct answer.
-Print the definition of "a brother of one's parent":
+Print the definition of "a part of the body where the foot and the leg meet":
 >??
-Wrong answer. The correct one is "uncle".
-Print the definition of "a brother of one's parent":
+Wrong answer. The correct one is "ankle".
+Print the definition of "a part of the body where the foot and the leg meet":
 >uncle
-Correct answer.
+Wrong answer. The correct one is "ankle", you've just written the definition of "a brother of one's parent".
 Input the action (add, remove, import, export, ask, exit):
 >exit
 Bye bye!
@@ -194,15 +194,15 @@ How many times?
 Print the definition of "France":
 >London
 Wrong answer. The correct one is "Paris".
-Print the definition of "France":
->Paris
-Correct answer.
-Print the definition of "Russia":
->Moscow
-Correct answer.
 Print the definition of "Russia":
 >Paris
 Wrong answer. The correct one is "Moscow", you've just written the definition of "France".
+Print the definition of "France":
+>Moscow
+Wrong answer. The correct one is "Paris", you've just written the definition of "Russia".
+Print the definition of "France":
+>Paris
+Correct answer.
 Input the action (add, remove, import, export, ask, exit):
 >exit
 Bye bye!
@@ -238,15 +238,15 @@ Input the action (add, remove, import, export, ask, exit):
 >ask
 How many times?
 >3
-Print the definition of "Japan":
->Tokyo
-Correct answer.
 Print the definition of "Russia":
+>Tokyo
+Wrong answer. The correct one is "Moscow", you've just written the definition of "Japan".
+Print the definition of "France":
 >Paris
-Wrong answer. The correct one is "Moscow", you've just written the definition of "France".
-Print the definition of "Japan":
+Correct answer.
+Print the definition of "France":
 >Moscow
-Wrong answer. The correct one is "Tokyo", you've just written the definition of "Russia".
+Wrong answer. The correct one is "Paris", you've just written the definition of "Russia".
 Input the action (add, remove, import, export, ask, exit):
 >remove
 The card:
@@ -386,9 +386,9 @@ Wrong answer. The correct one is "2".
 Print the definition of "a":
 >4
 Wrong answer. The correct one is "1".
-Print the definition of "a":
+Print the definition of "b":
 >3
-Wrong answer. The correct one is "1".
+Wrong answer. The correct one is "2".
 Print the definition of "a":
 >2
 Wrong answer. The correct one is "1", you've just written the definition of "b".
@@ -399,9 +399,9 @@ Input the action (add, remove, import, export, ask, exit):
 >ask
 How many times?
 >1
-Print the definition of "b":
+Print the definition of "a":
 >2
-Correct answer.
+Wrong answer. The correct one is "1", you've just written the definition of "b".
 Input the action (add, remove, import, export, ask, exit):
 >exit
 Bye bye!

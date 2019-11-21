@@ -52,9 +52,9 @@
 >ask
 How many times?
 >6
-4Print the definition of "a brother of one's parent":
+MPrint the definition of "a part of the body where the foot and the leg meet":
 >ankle
-*Wrong answer. The correct one is "uncle", [you've just written the definition of "a part of the body where the foot and the leg meet".
+Correct answer.
 4Print the definition of "a brother of one's parent":
 >??
 )Wrong answer. The correct one is "uncle".
@@ -64,12 +64,12 @@
 MPrint the definition of "a part of the body where the foot and the leg meet":
 >ankle
 Correct answer.
-4Print the definition of "a brother of one's parent":
+MPrint the definition of "a part of the body where the foot and the leg meet":
 >??
-)Wrong answer. The correct one is "uncle".
-4Print the definition of "a brother of one's parent":
+)Wrong answer. The correct one is "ankle".
+MPrint the definition of "a part of the body where the foot and the leg meet":
 >uncle
-Correct answer.
+*Wrong answer. The correct one is "ankle", Byou've just written the definition of "a brother of one's parent".
 :Input the action (add, remove, import, export, ask, exit):
 >exit
 Bye bye!
@@ -200,15 +200,15 @@ File name:
 !Print the definition of "France":
 >London
 )Wrong answer. The correct one is "Paris".
-!Print the definition of "France":
->Paris
-Correct answer.
-!Print the definition of "Russia":
->Moscow
-Correct answer.
 !Print the definition of "Russia":
 >Paris
 +Wrong answer. The correct one is "Moscow", /you've just written the definition of "France".
+!Print the definition of "France":
+>Moscow
+*Wrong answer. The correct one is "Paris", /you've just written the definition of "Russia".
+!Print the definition of "France":
+>Paris
+Correct answer.
 :Input the action (add, remove, import, export, ask, exit):
 >exit
 Bye bye!
@@ -245,15 +245,15 @@ File name:
 >ask
 How many times?
 >3
- Print the definition of "Japan":
->Tokyo
-Correct answer.
 !Print the definition of "Russia":
+>Tokyo
++Wrong answer. The correct one is "Moscow", .you've just written the definition of "Japan".
+!Print the definition of "France":
 >Paris
-+Wrong answer. The correct one is "Moscow", /you've just written the definition of "France".
- Print the definition of "Japan":
+Correct answer.
+!Print the definition of "France":
 >Moscow
-*Wrong answer. The correct one is "Tokyo", /you've just written the definition of "Russia".
+*Wrong answer. The correct one is "Paris", /you've just written the definition of "Russia".
 :Input the action (add, remove, import, export, ask, exit):
 >remove
 	The card:
@@ -396,9 +396,9 @@ File name:
 Print the definition of "a":
 >4
 %Wrong answer. The correct one is "1".
-Print the definition of "a":
+Print the definition of "b":
 >3
-%Wrong answer. The correct one is "1".
+%Wrong answer. The correct one is "2".
 Print the definition of "a":
 >2
 &Wrong answer. The correct one is "1", *you've just written the definition of "b".
@@ -409,9 +409,9 @@ File name:
 >ask
 How many times?
 >1
-Print the definition of "b":
+Print the definition of "a":
 >2
-Correct answer.
+&Wrong answer. The correct one is "1", *you've just written the definition of "b".
 :Input the action (add, remove, import, export, ask, exit):
 >exit
 Bye bye!
