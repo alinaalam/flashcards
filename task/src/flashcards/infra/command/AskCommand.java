@@ -2,6 +2,7 @@ package flashcards.infra.command;
 
 import flashcards.domain.Card;
 import flashcards.game.CardHolder;
+import flashcards.game.MistakeKeeper;
 import flashcards.infra.ScannerFactory;
 
 import java.util.*;
@@ -9,9 +10,11 @@ import java.util.*;
 public class AskCommand implements Command {
 
     private CardHolder cardHolder;
+    private MistakeKeeper mistakeKeeper;
 
-    public AskCommand(CardHolder cardHolder) {
+    public AskCommand(CardHolder cardHolder, MistakeKeeper mistakeKeeper) {
         this.cardHolder = cardHolder;
+        this.mistakeKeeper = mistakeKeeper;
     }
 
     @Override
@@ -26,6 +29,8 @@ public class AskCommand implements Command {
                 ScannerFactory.displayOutput("Correct answer.");
                 continue;
             }
+            // add this into the mistake keeper
+            mistakeKeeper.addMistake(card);
             // check if the answer belongs to some other flash card
             Card otherCard = cardHolder.getCardFromDefinition(answer);
             if (otherCard == null) {
