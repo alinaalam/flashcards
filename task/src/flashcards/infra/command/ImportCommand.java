@@ -34,7 +34,7 @@ public class ImportCommand implements Command {
         String[] cardArray = fileContent.split("\n");
         for (String cardDefinition : cardArray) {
             String[] content = cardDefinition.split(":");
-            Card card = new Card(content[0], content[1]);
+            Card card = new Card(content[0], content[1], Integer.parseInt(content[2]));
             cardHolder.add(card);
         }
         return cardArray.length;

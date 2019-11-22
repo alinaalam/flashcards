@@ -7,11 +7,9 @@ import flashcards.infra.command.*;
 public class CardGame {
 
     private CardHolder cardHolder;
-    private MistakeKeeper mistakeKeeper;
 
     public CardGame() {
         this.cardHolder = new CardHolder();
-        this.mistakeKeeper = new MistakeKeeper();
     }
 
     public void startGame() {
@@ -42,7 +40,7 @@ public class CardGame {
                     command = new ExportCommand(cardHolder);
                     break;
                 case ASK:
-                    command = new AskCommand(cardHolder, mistakeKeeper);
+                    command = new AskCommand(cardHolder);
                     break;
                 case EXIT:
                     command = new ExitCommand();
@@ -51,10 +49,10 @@ public class CardGame {
                     command = new LogCommand();
                     break;
                 case HARDEST_CARD:
-                    command = new HardestCardCommand(mistakeKeeper);
+                    command = new HardestCardCommand(cardHolder);
                     break;
                 case RESET_STATS:
-                    command = new ResetStatsCommand(mistakeKeeper);
+                    command = new ResetStatsCommand(cardHolder);
             }
             command.execute();
         } while (option != MenuOptions.EXIT);

@@ -57,13 +57,8 @@ public class CardHolder {
         return new ArrayList<>(cardMap.values());
     }
 
-//    public int importCards(String fileContent) {
-//        String[] cardArray = fileContent.split("\n");
-//        for (String cardDefinition : cardArray) {
-//            String[] content = cardDefinition.split(":");
-//            cards.put(content[0], content[1]);
-//            invertedCards.put(content[1], content[0]);
-//        }
-//        return cardArray.length;
-//    }
+    public void updateCard(Card card) {
+        cardMap.put(card.getTerm(), card);
+        invertedCardMap.put(card.getDefinition(), card);
+    }
 }

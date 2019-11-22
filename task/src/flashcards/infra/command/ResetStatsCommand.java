@@ -1,19 +1,28 @@
 package flashcards.infra.command;
 
-import flashcards.game.MistakeKeeper;
+import flashcards.domain.Card;
+import flashcards.game.CardHolder;
 import flashcards.infra.ScannerFactory;
+
+import java.util.List;
 
 public class ResetStatsCommand implements Command {
 
-    private MistakeKeeper mistakeKeeper;
+    private CardHolder cardHolder;
 
-    public ResetStatsCommand(MistakeKeeper mistakeKeeper) {
-        this.mistakeKeeper = mistakeKeeper;
+    public ResetStatsCommand(CardHolder cardHolder) {
+        this.cardHolder = cardHolder;
     }
 
     @Override
     public void execute() {
-        mistakeKeeper.resetMistakes();
+        List<Card> cards = cardHolder.getCards();
+
+        for (Card card : cards) {
+            card.setMistakes(0);
+            cardHolder.updateCard(card);
+        }
+
         ScannerFactory.displayOutput("Card statistics has been reset.");
     }
 }

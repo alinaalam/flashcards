@@ -1,45 +1,60 @@
 package flashcards.infra.command;
 
 import flashcards.domain.Card;
-import flashcards.game.MistakeKeeper;
+import flashcards.game.CardHolder;
 import flashcards.infra.ScannerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class HardestCardCommand implements Command {
 
-    private MistakeKeeper mistakeKeeper;
+    private CardHolder cardHolder;
 
-    public HardestCardCommand(MistakeKeeper mistakeKeeper) {
-        this.mistakeKeeper = mistakeKeeper;
+    public HardestCardCommand(CardHolder cardHolder) {
+        this.cardHolder = cardHolder;
     }
 
     @Override
     public void execute() {
-        Map<Card, Integer> mistakes = mistakeKeeper.getTheHardestCard();
+        List<Card> hardestCards = getTheHardestCards(cardHolder.getCards());
 
-        if (mistakes.isEmpty()) {
+        if (hardestCards.isEmpty()) {
             ScannerFactory.displayOutput("There are no cards with errors.");
             return;
         }
 
-        List<Integer> counter = new ArrayList<>(mistakes.values());
+        int mistakes = hardestCards.get(0).getMistakes();
 
-        if (mistakes.size() == 1) {
-            ScannerFactory.displayOutput("The hardest card is " + getCardTerms(mistakes) + ". You have " + counter.get(0) + " errors answering it.");
+        if (hardestCards.size() == 1) {
+            ScannerFactory.displayOutput("The hardest card is " + getCardTerms(hardestCards) + ". You have " + mistakes + " errors answering it.");
             return;
         }
 
-        ScannerFactory.displayOutput("The hardest cards are " + getCardTerms(mistakes) + ". You have " + counter.get(0) + " errors answering them.");
+        ScannerFactory.displayOutput("The hardest cards are " + getCardTerms(hardestCards) + ". You have " + mistakes + " errors answering them.");
     }
 
-    private String getCardTerms(Map<Card, Integer> mistakes) {
-        return mistakes.keySet().stream()
+    private String getCardTerms(List<Card> cards) {
+        return cards.stream()
                 .map(s -> "\"" + s.getTerm() + "\"")
                 .collect(Collectors.joining());
+    }
+
+    private List<Card> getTheHardestCards(List<Card> cards) {
+
+        if (cards.isEmpty()) {
+            return new ArrayList<>();
+        }
+
+        Collections.sort(cards);
+        int maximumMistakes = cards.get(0).getMistakes();
+
+        if (maximumMistakes == 0) {
+            return new ArrayList<>();
+        }
+
+        return cards.stream()
+                .filter(card -> card.getMistakes() == maximumMistakes)
+                .collect(Collectors.toList());
     }
 }

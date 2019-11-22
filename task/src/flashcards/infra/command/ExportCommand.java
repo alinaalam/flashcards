@@ -25,7 +25,7 @@ public class ExportCommand implements Command {
             FileWriter fileWriter = new FileWriter(file);
             List<Card> cards = cardHolder.getCards();
             for (Card card :  cards) {
-                fileWriter.write(card.getTerm() + ":" + card.getDefinition());
+                fileWriter.write(card.getTerm() + ":" + card.getDefinition() + ":" + card.getMistakes());
                 fileWriter.write("\n");
             }
             ScannerFactory.displayOutput(cards.size() + " cards have been saved.");
