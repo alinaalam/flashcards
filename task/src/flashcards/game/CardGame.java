@@ -2,17 +2,25 @@ package flashcards.game;
 
 import flashcards.domain.MenuOptions;
 import flashcards.infra.ScannerFactory;
+import flashcards.infra.cmd.Params;
 import flashcards.infra.command.*;
+import flashcards.util.ExportCards;
+import flashcards.util.ImportCards;
+
+import java.io.IOException;
 
 public class CardGame {
 
+    private Params params;
     private CardHolder cardHolder;
 
-    public CardGame() {
+    public CardGame(Params params) {
+        this.params = params;
         this.cardHolder = new CardHolder();
     }
 
     public void startGame() {
+        checkIfThereIsAnythingToImport();
         displayMenu();
     }
 
@@ -56,6 +64,28 @@ public class CardGame {
             }
             command.execute();
         } while (option != MenuOptions.EXIT);
+        checkIfThereIsAnythingToExport();
+    }
 
+    private void checkIfThereIsAnythingToImport() {
+        if (params.shouldImport()) {
+            try {
+                int totalCards = ImportCards.importCards(params.getFileToImport(), cardHolder);
+                ScannerFactory.displayOutput(totalCards + " cards have been loaded.");
+            } catch (IOException e) {
+
+            }
+        }
+    }
+
+    private void checkIfThereIsAnythingToExport() {
+        if (params.shouldExport()) {
+            try {
+                int totalCards = ExportCards.exportCards(params.getFileToExportTo(), cardHolder);
+                ScannerFactory.displayOutput(totalCards + " cards have been saved.");
+            } catch (IOException e) {
+
+            }
+        }
     }
 }
